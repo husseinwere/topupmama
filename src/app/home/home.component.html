@@ -1,0 +1,12 @@
+<div id="content">
+    <h1>Home</h1>
+    <hr>
+    <div class="user">
+        <h3>{{user?.data?.first_name}} {{user?.data?.last_name}}</h3>
+        <div>Location: Coordinates({{center?.lat}}, {{center?.lng}})</div>
+        <div class="row button-box">
+            <div class="col"><button [routerLink]="['/account']">MY ACCOUNT</button></div>
+            <div class="col"><button [routerLink]="['/users']">USERS</button></div>
+        </div>
+    </div>
+</div>

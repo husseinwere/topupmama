@@ -1,0 +1,11 @@
+<div id="navbar">
+    <div class="logo"><img [routerLink]="['/']" src="/assets/images/logo.png" alt=""></div>
+    <div class="menu">
+        <a [routerLink]="['/account']">My Account</a>
+        <a [routerLink]="['/users']">Users</a>
+        <a (click)="logout()">Logout</a>
+        <div class="time">
+            Time Left: <span>{{timeLeft}}</span>
+        </div>
+    </div>
+</div>

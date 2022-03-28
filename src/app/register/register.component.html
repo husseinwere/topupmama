@@ -1,0 +1,32 @@
+<div id="accounts">
+    <div id="form">
+        <div class="logo">
+            <img src="/assets/images/logo.png" alt="">
+        </div>
+        <form ngNativeValidate #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+            <div class="input-box">
+                <label for="">Email</label>
+                <input type="email" class="form-control" required name="email" (ngModel)="email" #email="ngModel">
+            </div>
+
+            <div class="input-box">
+                <label for="">Password</label>
+                <div class="password">
+                    <input #passwordInput class="form-control" type="password" name="password" (ngModel)="password" #password="ngModel" required minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+                    <button type="button" [hidden]="!passwordVisibility" (click)="hidePassword()"><mat-icon>visibility_off</mat-icon></button>
+                    <button type="button" [hidden]="passwordVisibility" (click)="showPassword()"><mat-icon>visibility</mat-icon></button>
+                </div>
+                <span class="errors" *ngIf="password.invalid && password.dirty">Min Length: 8 characters. Use at least a number, letter and a special character.</span>
+            </div>
+
+            <div id="errors" class="errors" *ngIf="serverError">An error has occurred. Please try again</div>
+
+            <div class="button-box">
+                <button [hidden]="registerProcess" type="submit">REGISTER</button>
+                <button [hidden]="!registerProcess" disabled><img src="/assets/images/loader.gif" alt=""></button>
+            </div>
+        </form>
+        <p>Already have an account? <a [routerLink]="['/login']">Log in</a></p>
+    </div>
+    <div id="bg"></div>
+</div>
