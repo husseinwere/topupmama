@@ -33,5 +33,27 @@ export class UsersService {
         return this.http.put(this.BASE_URL + 'users/' + id, user, { headers: headers })
     }
 
+    addDetails(details: {}){
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
+        return this.http.post(this.BASE_URL + 'users', details, { headers: headers })
+    }
 
+    updateDetails(details: {}, id: number){
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
+        return this.http.put(this.BASE_URL + 'users/' + id, details, { headers: headers })
+    }
+
+    deleteDetails(id: number){
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+        })
+        return this.http.delete(this.BASE_URL + 'users/' + id, { headers: headers, observe: 'response' })
+    }
 }

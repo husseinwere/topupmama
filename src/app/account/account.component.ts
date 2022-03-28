@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from "@angular/core";
+import { Component } from "@angular/core";
 import { ToastrService } from "../shared/toastr.service";
 import { UsersService } from "../shared/users.service";
 
@@ -28,6 +28,9 @@ export class AccountComponent {
             else {
                 this.toastr.error("An error has occurred. Please try again")
             }
+        }, (error)=>{
+            this.updateProcess = false
+            this.toastr.error("An error has occurred. Please try again")
         })
     }
 }

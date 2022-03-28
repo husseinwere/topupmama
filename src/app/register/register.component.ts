@@ -45,6 +45,7 @@ export class RegisterComponent {
                 this.serverError = true
             }
         }, error => {
+            this.registerProcess = false
             this.serverError = true
         })
     }

@@ -16,6 +16,8 @@ import { AuthService } from './shared/auth.service';
 import { MaterialModule } from './shared/material.module';
 import { ToastrService } from './shared/toastr.service';
 import { UsersService } from './shared/users.service';
+import { AddDetailsComponent } from './user-details/add-details.component';
+import { EditDetailsComponent } from './user-details/edit-details.component';
 import { UsersComponent } from './users/users.component';
 
 @NgModule({
@@ -26,7 +28,9 @@ import { UsersComponent } from './users/users.component';
     RegisterComponent,
     AccountComponent,
     HomeComponent,
-    UsersComponent
+    UsersComponent,
+    AddDetailsComponent,
+    EditDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -99,6 +99,7 @@ form .row {
     justify-content: space-between;
     box-shadow: 0 0 5px;
     padding: 0 15px;
+    background-color: #fff;
 }
 
 #navbar .logo img {
@@ -119,6 +120,9 @@ form .row {
     cursor: pointer;
 }
 #navbar .menu a:hover {
+    color: #006266;
+}
+#navbar .menu a.active {
     color: #006266;
 }
 #navbar .time span {
@@ -151,4 +155,12 @@ hr {
 .users .email {
     font-size: 13px;
     font-style: italic;
+}
+.users a {
+    all: unset;
+    margin: 3px;
+    font-size: 12px;
+    color: blue !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
 }

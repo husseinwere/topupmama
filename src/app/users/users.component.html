@@ -11,9 +11,10 @@
             <img [src]="user.avatar" alt="">
             <h3>{{user.first_name}} {{user.last_name}}</h3>
             <div class="email">{{user.email}}</div>
-            <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
+            <div>
+                <a [routerLink]="['/users/add/' + user.id]">Add</a>
+                <a [routerLink]="['/users/edit/' + user.id]">Edit</a>
+                <a (click)="deleteDetails(user.id)">Delete</a>
             </div>
         </div>
     </div>

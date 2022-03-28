@@ -46,6 +46,7 @@ export class LoginComponent {
                 this.serverError = true
             }
         }, error => {
+            this.loginProcess = false
             this.serverError = true
         })
     }

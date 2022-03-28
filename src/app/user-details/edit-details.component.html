@@ -1,0 +1,27 @@
+<div id="content">
+    <h1>EDIT USER DETAILS</h1>
+    <hr>
+    <form ngNativeValidate #editDetailsForm="ngForm" (ngSubmit)="editDetails(editDetailsForm.value)">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-box">
+                    <label for="">Name</label>
+                    <input type="text" class="form-control" required ngModel name="name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-box">
+                    <label for="">Job</label>
+                    <input type="text" class="form-control" required ngModel name="job">
+                </div>
+            </div>
+        </div>
+
+        <div class="button-box row">
+            <div class="col-md-6">
+                <button [hidden]="editProcess" type="submit">EDIT DETAILS</button>
+                <button [hidden]="!editProcess" disabled><img src="/assets/images/loader.gif" alt=""></button>
+            </div>
+        </div>
+    </form>
+</div>

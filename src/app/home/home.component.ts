@@ -15,7 +15,6 @@ export class HomeComponent {
     ngOnInit(){
         this.usersService.getUser(+localStorage.getItem('id')!).subscribe(res => {
             this.user = res
-            console.log(res)
 
             //user location
             navigator.geolocation.getCurrentPosition((position) => {
